@@ -4,7 +4,8 @@ import BottomNav from './components/BottomNav';
 import Home from './pages/Home';
 import About from './pages/About';
 import History from './pages/History';
-
+import Community from './pages/Community';
+import Donate from './pages/Donate';
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>(View.HOME);
   const [isAppLoading, setIsAppLoading] = useState(true);
@@ -17,21 +18,23 @@ const App: React.FC = () => {
   }, []);
 
   const renderView = () => {
-    switch (currentView) {
-      case View.HOME:
-        return <Home onNavigate={setCurrentView} />;
-      case View.ABOUT:
-        return <About />;
-      case View.HISTORY:
-        return <History />;
-      case View.DONATE:
-        return <Donate />;
-      case View.COMMUNITY:
-        return <Community user={user} onLogin={handleLogin} onLogout={handleLogout} />;
-      default:
-        return <Home onNavigate={setCurrentView} />;
-    }
-  };
+  switch (currentView) {
+    case View.HOME:
+      return <Home onNavigate={setCurrentView} />;
+    case View.ABOUT:
+      return <About />;
+    case View.HISTORY:
+      return <History />;
+    case View.COMMUNITY:
+      return <Community user={user} onLogin={handleLogin} onLogout={handleLogout} />;
+    case View.DONATE:
+      return <Donate />;
+    case View.AITUTOR:
+      return <AITutor />;
+    default:
+      return <Home onNavigate={setCurrentView} />;
+  }
+};
 
   if (isAppLoading) {
   return (
