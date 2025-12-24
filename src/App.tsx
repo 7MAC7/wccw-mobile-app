@@ -23,6 +23,8 @@ const App: React.FC = () => {
         return <About />;
       case View.HISTORY:
         return <History />;
+      case View.DONATE:
+        return <Donate />;
       default:
         return <Home onNavigate={setCurrentView} />;
     }

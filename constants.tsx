@@ -28,3 +28,13 @@ export const HISTORY_TIMELINE: HistoryEvent[] = [
     description: '워싱턴 DC를 중심으로 기림비 건립, 차세대 교육, 국제 연대 활동을 통해 정의 실현과 인권 회복을 위해 노력하고 있습니다.\nCentered in DC, we strive for justice and human rights through memorials, education, and international solidarity.'
   }
 ];
+
+export const DONATION_DATA = [
+  { name: '1월 Jan', amount: 4200 },
+  { name: '2월 Feb', amount: 3100 },
+  { name: '3월 Mar', amount: 2500 },
+  { name: '4월 Apr', amount: 2780 },
+  { name: '5월 May', amount: 4890 },
+  { name: '6월 Jun', amount: 3390 },
+  { name: '7월 Jul', amount: 3490 },
+];
