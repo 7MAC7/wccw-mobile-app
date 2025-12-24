@@ -33,26 +33,31 @@ const App: React.FC = () => {
   };
 
   if (isAppLoading) {
-    return (
-      <div className="h-screen w-full bg-wccw-purple flex flex-col items-center justify-center text-white p-10 text-center overflow-hidden">
-        <div className="relative mb-8">
-          <div className="w-24 h-24 bg-white rounded-[2rem] flex items-center justify-center shadow-2xl animate-pulse">
-            <img src="https://wccw.org/wp-content/uploads/2019/12/logo.png" alt="WCCW Logo" className="w-16 h-16 object-contain" />
-          </div>
-          <div className="absolute -top-4 -right-4 w-10 h-10 text-wccw-yellow animate-bounce">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z"/></svg>
-          </div>
-        </div>
-        <h1 className="text-3xl font-serif font-bold tracking-[0.2em] mb-2 animate-fade-in">WCCW</h1>
-        <p className="text-purple-200 text-sm font-light tracking-widest uppercase opacity-80">Justice & Peace</p>
-        <div className="mt-16 flex space-x-3">
-          <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-          <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-          <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce"></div>
+  return (
+    <div className="h-screen w-full bg-wccw-purple flex flex-col items-center justify-center text-white p-10 text-center overflow-hidden relative">
+      {/* 나비 배경 */}
+      <img 
+        src="/splash.png" 
+        alt="Butterflies - In memory of Comfort Women victims"
+        className="absolute inset-0 w-full h-full object-cover opacity-30"
+      />
+      
+      {/* 앞으로 나올 내용들 */}
+      <div className="relative z-10 mb-8">
+        <div className="w-24 h-24 bg-white rounded-[2rem] flex items-center justify-center shadow-2xl animate-pulse">
+          <span className="text-3xl font-serif font-bold text-wccw-purple">WCCW</span>
         </div>
       </div>
-    );
-  }
+      <h1 className="text-3xl font-serif font-bold tracking-[0.2em] mb-2 animate-fade-in relative z-10">WCCW</h1>
+      <p className="text-purple-200 text-sm font-light tracking-widest uppercase opacity-80 relative z-10">Justice & Peace</p>
+      <div className="mt-16 flex space-x-3 relative z-10">
+        <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+        <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+        <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  );
+}
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans antialiased max-w-md mx-auto relative shadow-2xl flex flex-col overflow-hidden">
