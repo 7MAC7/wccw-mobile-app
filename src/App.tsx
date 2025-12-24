@@ -21,6 +21,8 @@ const App: React.FC = () => {
         return <Home onNavigate={setCurrentView} />;
       case View.ABOUT:
         return <About />;
+      case View.HISTORY:
+        return <History />;
       default:
         return <Home onNavigate={setCurrentView} />;
     }
