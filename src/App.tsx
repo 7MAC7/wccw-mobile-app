@@ -3,6 +3,7 @@ import { View } from './types';
 import BottomNav from './components/BottomNav';
 import Home from './pages/Home';
 import About from './pages/About';
+import History from './pages/History';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>(View.HOME);
