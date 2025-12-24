@@ -5,7 +5,8 @@ export enum View {
   ABOUT = 'ABOUT',
   HISTORY = 'HISTORY',
   DONATE = 'DONATE',
-  COMMUNITY = 'COMMUNITY'
+  COMMUNITY = 'COMMUNITY',
+  AITUTOR = 'AITUTOR'
 }
 
 export interface NavItem {
