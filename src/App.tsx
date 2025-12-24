@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View } from './types';
 import BottomNav from './components/BottomNav';
 import Home from './pages/Home';
+import About from './pages/About';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>(View.HOME);
@@ -13,6 +14,17 @@ const App: React.FC = () => {
     }, 2500);
     return () => clearTimeout(timer);
   }, []);
+
+  const renderView = () => {
+    switch (currentView) {
+      case View.HOME:
+        return <Home onNavigate={setCurrentView} />;
+      case View.ABOUT:
+        return <About />;
+      default:
+        return <Home onNavigate={setCurrentView} />;
+    }
+  };
 
   if (isAppLoading) {
     return (
@@ -45,9 +57,13 @@ const App: React.FC = () => {
         </div>
         <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
       </header>
+
       <main className="flex-1 overflow-y-auto no-scrollbar scroll-smooth">
-        <Home onNavigate={setCurrentView} />
+        <div className="animate-fade-in">
+          {renderView()}   {/* ← 여기서 페이지 전환! */}
+        </div>
       </main>
+
       <BottomNav currentView={currentView} onNavigate={setCurrentView} />
     </div>
   );
