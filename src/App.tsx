@@ -25,6 +25,8 @@ const App: React.FC = () => {
         return <History />;
       case View.DONATE:
         return <Donate />;
+      case View.COMMUNITY:
+        return <Community user={user} onLogin={handleLogin} onLogout={handleLogout} />;
       default:
         return <Home onNavigate={setCurrentView} />;
     }
