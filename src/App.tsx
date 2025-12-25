@@ -6,9 +6,16 @@ import About from './pages/About';
 import History from './pages/History';
 import Community from './pages/Community';
 import Donate from './pages/Donate';
+import AITutor from './pages/AITutor';  // ← 추가!!!
+
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>(View.HOME);
   const [isAppLoading, setIsAppLoading] = useState(true);
+
+  // Community용 임시 user 상태 (테스트용, 나중에 로그인 기능 추가할 때 바꿔)
+  const [user, setUser] = useState<{ username: string } | null>({ username: '테스트유저' });
+  const handleLogin = () => setUser({ username: '테스트유저' });
+  const handleLogout = () => setUser(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,50 +25,47 @@ const App: React.FC = () => {
   }, []);
 
   const renderView = () => {
-  switch (currentView) {
-    case View.HOME:
-      return <Home onNavigate={setCurrentView} />;
-    case View.ABOUT:
-      return <About />;
-    case View.HISTORY:
-      return <History />;
-    case View.COMMUNITY:
-      return <Community user={user} onLogin={handleLogin} onLogout={handleLogout} />;
-    case View.DONATE:
-      return <Donate />;
-    case View.AITUTOR:
-      return <AITutor />;
-    default:
-      return <Home onNavigate={setCurrentView} />;
-  }
-};
+    switch (currentView) {
+      case View.HOME:
+        return <Home onNavigate={setCurrentView} />;
+      case View.ABOUT:
+        return <About />;
+      case View.HISTORY:
+        return <History />;
+      case View.COMMUNITY:
+        return <Community user={user} onLogin={handleLogin} onLogout={handleLogout} />;
+      case View.DONATE:
+        return <Donate />;
+      case View.AITUTOR:
+        return <AITutor />;
+      default:
+        return <Home onNavigate={setCurrentView} />;
+    }
+  };
 
   if (isAppLoading) {
-  return (
-    <div className="h-screen w-full bg-wccw-purple flex flex-col items-center justify-center text-white p-10 text-center overflow-hidden relative">
-      {/* 나비 배경 */}
-      <img 
-        src="/splash.png" 
-        alt="Butterflies - In memory of Comfort Women victims"
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
-      />
-      
-      {/* 앞으로 나올 내용들 */}
-      <div className="relative z-10 mb-8">
-        <div className="w-24 h-24 bg-white rounded-[2rem] flex items-center justify-center shadow-2xl animate-pulse">
-          <span className="text-3xl font-serif font-bold text-wccw-purple">WCCW</span>
+    return (
+      <div className="h-screen w-full bg-wccw-purple flex flex-col items-center justify-center text-white p-10 text-center overflow-hidden relative">
+        <img
+          src="/splash.png"
+          alt="Butterflies - In memory of Comfort Women victims"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+        <div className="relative z-10 mb-8">
+          <div className="w-24 h-24 bg-white rounded-[2rem] flex items-center justify-center shadow-2xl animate-pulse">
+            <span className="text-3xl font-serif font-bold text-wccw-purple">WCCW</span>
+          </div>
+        </div>
+        <h1 className="text-3xl font-serif font-bold tracking-[0.2em] mb-2 animate-fade-in relative z-10">WCCW</h1>
+        <p className="text-purple-200 text-sm font-light tracking-widest uppercase opacity-80 relative z-10">Justice & Peace</p>
+        <div className="mt-16 flex space-x-3 relative z-10">
+          <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+          <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+          <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce"></div>
         </div>
       </div>
-      <h1 className="text-3xl font-serif font-bold tracking-[0.2em] mb-2 animate-fade-in relative z-10">WCCW</h1>
-      <p className="text-purple-200 text-sm font-light tracking-widest uppercase opacity-80 relative z-10">Justice & Peace</p>
-      <div className="mt-16 flex space-x-3 relative z-10">
-        <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-        <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-        <div className="w-2 h-2 bg-wccw-yellow rounded-full animate-bounce"></div>
-      </div>
-    </div>
-  );
-}
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans antialiased max-w-md mx-auto relative shadow-2xl flex flex-col overflow-hidden">
@@ -72,13 +76,11 @@ const App: React.FC = () => {
         </div>
         <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
       </header>
-
       <main className="flex-1 overflow-y-auto no-scrollbar scroll-smooth">
         <div className="animate-fade-in">
-          {renderView()}   {/* ← 여기서 페이지 전환! */}
+          {renderView()}
         </div>
       </main>
-
       <BottomNav currentView={currentView} onNavigate={setCurrentView} />
     </div>
   );
