@@ -6,13 +6,13 @@ import About from './pages/About';
 import History from './pages/History';
 import Community from './pages/Community';
 import Donate from './pages/Donate';
-import AITutor from './pages/AITutor';  // ← 추가!!!
+import AITutor from './pages/AITutor';  // AITutor도 추가!
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>(View.HOME);
   const [isAppLoading, setIsAppLoading] = useState(true);
 
-  // Community용 임시 user 상태 (테스트용, 나중에 로그인 기능 추가할 때 바꿔)
+  // Community 게시판 테스트용 임시 사용자 상태 (에러 방지)
   const [user, setUser] = useState<{ username: string } | null>({ username: '테스트유저' });
   const handleLogin = () => setUser({ username: '테스트유저' });
   const handleLogout = () => setUser(null);
