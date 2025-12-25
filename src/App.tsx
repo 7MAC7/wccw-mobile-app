@@ -12,8 +12,7 @@ const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>(View.HOME);
   const [isAppLoading, setIsAppLoading] = useState(true);
 
-  // Community 게시판 테스트용 임시 사용자 (에러 안 나게)
-  const [user, setUser] = useState<{ username: string } | null>({ username: '테스트유저' });
+  const [user, setUser] = useState<{ username: string } | null>({ username: '테스트유저' });  
   const handleLogin = () => setUser({ username: '테스트유저' });
   const handleLogout = () => setUser(null);
 
