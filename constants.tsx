@@ -8,6 +8,7 @@ export const NAV_ITEMS = [
   { id: View.HISTORY, label: '역사\nHistory', icon: <BookOpen size={24} /> },
   { id: View.COMMUNITY, label: '나눔\nBoard', icon: <MessageSquare size={24} /> },
   { id: View.DONATE, label: '후원\nDonate', icon: <Heart size={24} /> },
+  { id: View.AITUTOR, label: 'AI 튜터\nTutor', icon: <Bot size={24} /> },
 ];
 
 export const HISTORY_TIMELINE: HistoryEvent[] = [
