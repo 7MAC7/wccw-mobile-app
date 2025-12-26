@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { GoogleGenerativeAI } from '@google/genai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { ChatMessage } from '../types';
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY || '');
+const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY || '');
 
 const AITutor: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
