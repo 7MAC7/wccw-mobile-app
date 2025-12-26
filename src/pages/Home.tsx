@@ -26,8 +26,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </p>
 
         <p className="text-gray-700 text-lg leading-relaxed mt-8 drop-shadow-lg">
-          우리는 일본군 위안부 피해자 할머니들의 명예 회복과<br />
-          올바른 역사 교육을 위해 함께합니다.
+          우리는 일본군 위안부 피해자 할머니들의<br /> 명예 회복과 올바른 역사 교육을 위해<br /> 함께 합니다.
         </p>
 
         <p className="text-gray-600 mt-16 text-sm opacity-90">
