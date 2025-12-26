@@ -6,7 +6,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY || '');
 
 const AITutor: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: '안녕하세요! 일본군 위안부 문제와 관련된 역사에 대해 궁금한 점을 물어보세요. 정확하고 존중하는 태도로 답변드릴게요.' }
+    { role: 'model', text: '안녕하세요! 일본군 위안부 문제와 관련된 역사에 대해 궁금한 점을 물어보세요. 정확하고 존중하는 태도로 답변 드릴께요.' }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -22,7 +22,7 @@ const AITutor: React.FC = () => {
 
     try {
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-      const prompt = `당신은 일본군 위안부 문제 전문 역사 튜터입니다. 사용자의 질문에 정확한 역사적 사실에 기반하여 존중하고 공정하게 답변해주세요. 한국어로 답변하세요.\n\n질문: ${input}`;
+      const prompt = `당신은 일본군 위안부 문제 전문 역사 튜터입니다. 사용자의 질문에 정확한 역사적 사실에 기반하여 존중하고 공정하게 답변해 주세요. 한국어로 답변하세요.\n\n질문: ${input}`;
       
       const result = await model.generateContent(prompt);
       const response = await result.response;
@@ -31,7 +31,7 @@ const AITutor: React.FC = () => {
       const botMessage: ChatMessage = { role: 'model', text };
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      const errorMessage: ChatMessage = { role: 'model', text: '죄송해요, 답변을 생성하는 중 오류가 발생했습니다. 다시 시도해주세요.', isError: true };
+      const errorMessage: ChatMessage = { role: 'model', text: '죄송해요, 답변을 생성하는 중 오류가 발생했습니다. 다시 시도해 주세요.', isError: true };
       setMessages(prev => [...prev, errorMessage]);
     }
     setLoading(false);
