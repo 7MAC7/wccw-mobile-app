@@ -63,7 +63,7 @@ const Community: React.FC<CommunityProps> = ({ user, onLogin, onLogout }) => {
     <div className="p-6 pb-20">
       <h1 className="text-3xl font-serif font-bold text-wccw-purple mb-8 tracking-wide text-center">나눔 게시판</h1>
 
-      {/* 로그인 안 됐으면 로그인 유도 (임시) */}
+      {/* 로그인 안 됐으면 로그인 유도 */}
       {!user ? (
         <div className="text-center py-12">
           <p className="text-gray-600 mb-6">글을 작성하려면 로그인이 필요합니다.</p>
@@ -86,5 +86,36 @@ const Community: React.FC<CommunityProps> = ({ user, onLogin, onLogout }) => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             className="w-full border border-gray-300 rounded-lg px-4 py-3 h-32 focus:outline-none focus:border-wccw-purple resize-none"
-  required
-/>
+            required
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="mt-4 bg-wccw-purple text-white font-bold py-3 px-8 rounded-full shadow hover:shadow-lg disabled:opacity-70"
+          >
+            {loading ? '작성 중...' : '작성하기'}
+          </button>
+        </form>
+      )}
+
+      {/* 게시물 목록 */}
+      <div className="space-y-6">
+        {posts.length === 0 ? (
+          <p className="text-center text-gray-500 py-12">아직 작성된 메시지가 없습니다. 첫 번째 메시지를 남겨주세요.</p>
+        ) : (
+          posts.map((post) => (
+            <div key={post.id} className="bg-white rounded-2xl p-6 shadow-md">
+              <h3 className="text-xl font-bold text-wccw-purple mb-2">{post.title}</h3>
+              <p className="text-sm text-gray-500 mb-3">
+                작성자: {post.author} | {post.date}
+              </p>
+              <p className="text-gray-700 leading-relaxed whitespace-pre-line">{post.content}</p>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Community;
