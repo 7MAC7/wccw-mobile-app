@@ -84,4 +84,7 @@ const Community: React.FC<CommunityProps> = ({ user, onLogin, onLogout }) => {
           <textarea
             placeholder="평화의 메시지를 나눠주세요..."
             value={content}
-            onChange={(e) => setContent(e
+            onChange={(e) => setContent(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 h-32 focus:outline-none focus:border-wccw-purple resize-none"
+  required
+/>
