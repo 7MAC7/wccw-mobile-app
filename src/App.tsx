@@ -69,10 +69,10 @@ useEffect(() => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans antialiased max-w-md mx-auto relative shadow-2xl flex flex-col overflow-hidden">
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="WCCW Logo" className="w-10 h-10 object-contain rounded-full" />
-          <span className="font-serif font-bold text-xl text-wccw-purple tracking-tight">WCCW</span>
-        </div>
+        <div className="flex items-center gap-3">
+  <img src="/logo.png" alt="WCCW Logo" className="w-12 h-12 object-contain" />
+  <span className="font-serif font-bold text-2xl text-wccw-purple tracking-tight">WCCW</span>
+</div>
         <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
       </header>
       <main className="flex-1 overflow-y-auto no-scrollbar scroll-smooth">
