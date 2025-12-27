@@ -1,0 +1,8 @@
+
+{
+  "description": "WCCW Mobile App - World-Class Championship Workspace with Real-time AI Voice Coach.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "name": "WCCW Champion"
+}
