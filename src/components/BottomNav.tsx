@@ -1,5 +1,5 @@
 import React from 'react';
-import { NAV_ITEMS } from '../../constants';
+import { NAV_ITEMS } from '../constants';
 import { View } from '../types';
 
 interface BottomNavProps {

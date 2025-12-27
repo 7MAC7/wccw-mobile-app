@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from './src/types';
-import { Home, Info, BookOpen, Heart, MessageSquare } from 'lucide-react';
+import { View } from '../types';
+import { Home, Info, BookOpen, Heart, MessageSquare, Bot } from 'lucide-react';
 
 export const NAV_ITEMS = [
   { id: View.HOME, label: '홈\nHome', icon: <Home size={24} /> },
