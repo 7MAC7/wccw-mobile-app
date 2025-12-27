@@ -22,6 +22,7 @@
 </head>
 <body class="bg-black text-white">
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- Vite 빌드에서는 importmap 없이 직접 index.tsx를 참조해야 합니다. -->
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
