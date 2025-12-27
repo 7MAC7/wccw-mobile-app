@@ -22,7 +22,7 @@
 </head>
 <body class="bg-black text-white">
     <div id="root"></div>
-    <!-- Vite가 이 파일을 정확히 인식할 수 있도록 경로를 수정합니다 -->
-    <script type="module" src="/index.tsx"></script>
+    <!-- importmap 없이 직접 index.tsx를 상대 경로로 참조합니다 -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
