@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    base: '/',
     define: {
       'process.env.API_KEY': JSON.stringify(env.API_KEY || ''),
       'process.env.FIREBASE_API_KEY': JSON.stringify(env.FIREBASE_API_KEY || ''),
