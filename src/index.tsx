@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
+import './style.css';
 import { 
   Home, 
   MessageSquare, 
@@ -192,7 +193,6 @@ const ChatInterface = () => {
     if (isLive) {
       setIsLive(false);
       if (liveSessionRef.current) {
-        // session.close() logic would go here if SDK supported it explicitly
         liveSessionRef.current = null;
       }
       return;
